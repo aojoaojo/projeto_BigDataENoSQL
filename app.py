@@ -7,17 +7,17 @@ from pywebio.output import put_text, popup
 
 
 # Conexão com o MongoDB
-client = MongoClient("mongodb://localhost:27017/")
-db = client["meu_banco_de_dados"]
-colecao = db["personagens"]
+client = MongoClient("mongodb://localhost:27017")
+db = client["DnD"]
+colecao = db["personagem"]
 
 def collect_character_data():
         # Solicitar dados básicos do personagem
-    data = input_group("Dados do Personagem Fictício", [
+    data = input_group("Dados do Personagem", [
         input("Nome", name="nome"),
-        select("Vocação", ['Guerreiro', 'Mago', 'Arqueiro', 'Healer'], name="vocacao"),
+        select("Classe", ['Guerreiro', 'Mago', 'Arqueiro', 'Healer'], name="vocacao"),
         radio("Sexo", options=['Masculino', 'Feminino', 'Outro'], name="sexo"),
-        textarea("Contexto/História", name="contexto"),
+        textarea("Contexto/Historia", name="contexto"),
         input("Idade", type="number", name="idade"),
         textarea("Habilidades", name="habilidades")
     ])
