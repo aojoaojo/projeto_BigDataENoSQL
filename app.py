@@ -7,7 +7,7 @@ from pywebio.output import put_text, popup
 
 
 # Conexão com o MongoDB
-client = MongoClient("mongodb://localhost:27017")
+client = MongoClient("mongodb://root:mongo@localhost:27017")
 db = client["DnD"]
 colecao = db["personagem"]
 
@@ -23,7 +23,7 @@ def collect_character_data():
     ])
 
     # Gerar atributos automaticamente
-    atributos = {'Inteligência': 0, 'Destreza': 0, 'Força': 0, 'Carisma': 0}
+    atributos = {'Inteligencia': 0, 'Destreza': 0, 'Forca': 0, 'Carisma': 0}
     total_atributos = 36
 
     while total_atributos > 0:
